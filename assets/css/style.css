@@ -1,9 +1,16 @@
-@font-face {
-  font-family: "Trip Sans";
-  src: url("../fonts/TripSans-Regular.woff2") format("woff2"), url("../fonts/TripSans-Regular.woff") format("woff"), url("../fonts/TripSans-Regular.ttf") format("truetype"), url("../fonts/TripSans-Regular.svg#TripSans-Regular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
+:root {
+  --black: #000;
+  --black-hover: #333;
+  --img-hover: #faf1ed;
+  --red: #ff5d5d;
+  --color-michelin: #bd2333;
+  --bg-michelin: #faf1ed;
+  --light-grey: #f2f2f2;
+  --light-green: #34e0a1;
+  --w-container: 1136px;
+  --px-container: 24px;
+  --py-h3: 28px;
+  --font-p: Georgia, "Times New Roman", Times, serif; }
 
 * {
   box-sizing: border-box; }
@@ -12,18 +19,33 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: var(--black);
   font-family: "Trip Sans", sans-serif;
-  color: #000000; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+button {
+  font-family: inherit;
+  cursor: pointer; }
 
 .is-column {
   flex-direction: column; }
 
+a {
+  color: var(--black-hover); }
+  a:hover {
+    text-decoration: underline; }
+
+strong {
+  color: #545454;
+  font-weight: 700; }
+
 .container {
-  width: 1136px;
-  min-width: 1136px;
+  width: calc(var(--w-container) + 2 * var(--px-container));
+  min-width: calc(var(--w-container) + 2 * var(--px-container));
   margin: 0 auto;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding-right: var(--px-container);
+  padding-left: var(--px-container);
   /*@media (max-width: $widescreen) {
     width: 1153px;
     min-width: 1153px;
@@ -44,26 +66,57 @@ body {
     width: 320px;
     min-width: 320px;
   } */ }
-  .container .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-right: -24px;
-    margin-left: -24px; }
-    @media (max-width: 1220px) {
-      .container .row {
-        margin: 0 -8px; } }
 
-.container-fluid {
-  padding: 0 48px; }
-  .container-fluid .row {
-    display: flex;
-    align-items: center;
-    padding: 0 16px; }
+/* Titles */
+h1 {
+  font-family: "Trip Sans Medium";
+  font-size: 54px;
+  line-height: 65px;
+  color: var(--red);
+  font-weight: bolder; }
+  h1 span {
+    color: var(--black); }
 
-/* -------------- */
-/* HEADER */
-/* -------------- */
+h2 {
+  font-family: "Trip Sans Medium";
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 800;
+  margin-bottom: 12px; }
+
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 12px; }
+
+h4 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 26px; }
+
+h5 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #545454;
+  margin-top: 10px; }
+
+@font-face {
+  font-family: "Trip Sans";
+  src: url("../fonts/TripSans-Regular.woff2") format("woff2"), url("../fonts/TripSans-Regular.woff") format("woff"), url("../fonts/TripSans-Regular.ttf") format("truetype"), url("../fonts/TripSans-Regular.svg#TripSans-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Trip Sans Medium";
+  src: url("../fonts/TripSans-Medium.woff2") format("woff2"), url("../fonts/TripSans-Medium.woff") format("woff"), url("../fonts/TripSans-Medium.ttf") format("truetype"), url("../fonts/TripSans-Medium.svg#TripSans-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
 a {
   text-decoration: none; }
 
@@ -82,7 +135,8 @@ header {
       align-items: center; }
       header #header .left_menu_logo img {
         width: 180px;
-        margin-right: 28px; }
+        margin-right: 28px;
+        outline: none; }
     header #header .right_menu_icons {
       height: 40px;
       min-width: 40px;
@@ -90,10 +144,10 @@ header {
       border-radius: 20px;
       padding: 12px;
       margin-right: 8px;
-      color: #000000;
+      color: var(--black);
       transition: background-color 0.1s linear, border-color 0.1s linear; }
       header #header .right_menu_icons:hover {
-        background-color: #f2f2f2; }
+        background-color: var(--light-grey); }
       header #header .right_menu_icons span {
         font-size: 16px;
         font-weight: 700;
@@ -101,26 +155,16 @@ header {
       header #header .right_menu_icons svg {
         font-size: large; }
     header #header .right_menu button {
-      font-family: "Trip Sans" !important;
       font-size: 16px;
       line-height: 20px;
-      cursor: pointer;
       font-weight: 700;
       border: none;
       appearance: none;
       color: white;
-      background-color: #000000;
+      background-color: var(--black);
       border-radius: 20px;
       padding: 10px 16px;
       transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear; }
-
-main #banner h1 {
-  font-size: 54px;
-  line-height: 65px;
-  color: #ff5d5d;
-  font-weight: bolder; }
-  main #banner h1 span {
-    color: #000000; }
 
 main #banner .menu ul {
   display: flex;
@@ -128,8 +172,8 @@ main #banner .menu ul {
   margin: 16px 0 25px; }
   main #banner .menu ul li {
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    color: #000000;
+    border-radius: 12px;
+    color: var(--black);
     cursor: pointer;
     font-size: 16px;
     padding: 12px 16px;
@@ -138,17 +182,18 @@ main #banner .menu ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 16px;
     transition: background-color 0.2s, color 0.2s; }
     main #banner .menu ul li:hover {
       color: white;
-      border-color: #000000;
-      background-color: #000000; }
-    main #banner .menu ul li:last-child {
-      margin-right: auto; }
+      border-color: var(--black);
+      background-color: var(--black); }
+    main #banner .menu ul li:not(:last-child) {
+      margin-right: 16px; }
     main #banner .menu ul li span {
       line-height: 20px;
-      display: block; }
+      max-width: 88px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
 
 main #banner .gallery {
   position: relative;
@@ -158,15 +203,17 @@ main #banner .gallery {
   overflow: hidden; }
   main #banner .gallery img {
     object-fit: cover;
-    cursor: pointer;
-    transition: opacity 0.3s linear; }
-    main #banner .gallery img:hover {
-      opacity: 0.7; }
+    cursor: pointer; }
+    main #banner .gallery img {
+      transition: opacity 0.3s linear; }
+      main #banner .gallery img:hover {
+        opacity: 0.7; }
   main #banner .gallery .first {
-    flex: 1.5;
+    flex: 1;
     margin-right: 5px; }
   main #banner .gallery .photos {
     flex: 1;
+    width: 480px;
     display: flex;
     flex-direction: column; }
     main #banner .gallery .photos img {
@@ -186,9 +233,9 @@ main #banner .gallery {
       color: white;
       padding: 10px;
       border-radius: 16px;
-      background-color: #000000; }
+      background-color: var(--black); }
       main #banner .gallery .allpictures a:hover {
-        background-color: #333333; }
+        background-color: var(--black-hover); }
 
 main #banner .breadcrumbs {
   display: flex;
@@ -198,48 +245,33 @@ main #banner .breadcrumbs {
   font-size: 12px;
   line-height: 14px;
   font-weight: 400; }
-  main #banner .breadcrumbs_left a {
-    color: #333333; }
-    main #banner .breadcrumbs_left a:hover {
-      text-decoration: underline; }
-    main #banner .breadcrumbs_left a::after {
-      content: ">";
-      margin: 0 2px; }
-    main #banner .breadcrumbs_left a:last-child::after {
-      content: ""; }
+  main #banner .breadcrumbs_left a::after {
+    content: ">";
+    margin: 0 2px; }
+  main #banner .breadcrumbs_left a:last-child::after {
+    content: ""; }
 
 main #second {
   margin-top: 16px;
-  margin-bottom: 80px;
   display: flex;
   justify-content: space-between; }
   main #second .first_column {
     width: 50%; }
-    main #second .first_column h2 {
-      font-size: 28px;
-      line-height: 34px;
-      font-weight: 800;
-      margin-bottom: 12px; }
     main #second .first_column p {
-      font-family: Georgia, "Times New Roman", Times, serif;
+      font-family: var(--font-p);
       font-size: 20px;
       line-height: 24px;
       font-weight: 400;
-      color: #333333;
+      color: var(--black-hover);
       margin-bottom: 24px; }
   main #second .second_column {
     width: 42%;
     display: flex;
     flex-direction: column; }
     main #second .second_column_top {
-      background-color: #ff5d5d;
+      background-color: var(--red);
       padding: 32px 32px 8px;
       border-radius: 12px 12px 0 0; }
-      main #second .second_column_top h3 {
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 40px;
-        margin-bottom: 12px; }
       main #second .second_column_top p {
         font-weight: 400;
         font-size: 16px;
@@ -250,8 +282,7 @@ main #second {
         font-weight: 700;
         border: none;
         color: white;
-        cursor: pointer;
-        background-color: #000000;
+        background-color: var(--black);
         font-size: 16px;
         display: inline-block;
         border-radius: 20px;
@@ -259,6 +290,196 @@ main #second {
         margin-bottom: 24px;
         transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear; }
         main #second .second_column_top button:hover {
-          background-color: #333333; }
+          background-color: var(--black-hover); }
     main #second .second_column img {
       border-radius: 0 0 12px 12px; }
+
+main #immanquables {
+  margin-top: 84px; }
+  main #immanquables .entertain {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+    margin-top: 24px; }
+    main #immanquables .entertain_text {
+      width: calc(25% + 40px); }
+      main #immanquables .entertain_text p {
+        font-family: var(--font-p);
+        font-size: 18px;
+        line-height: 22px;
+        color: var(--black-hover);
+        font-weight: 400;
+        margin-bottom: 24px; }
+      main #immanquables .entertain_text a {
+        font-size: 14px;
+        line-height: 17px;
+        color: #545454;
+        font-weight: 700; }
+    main #immanquables .entertain_carousel {
+      width: 1000px;
+      display: flex;
+      overflow: hidden;
+      overflow-x: scroll;
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+      /* Chrome, Edge, and Safari */ }
+      main #immanquables .entertain_carousel {
+        scrollbar-width: auto;
+        scrollbar-color: #6b6b6b #f5f5f5; }
+      main #immanquables .entertain_carousel::-webkit-scrollbar {
+        width: 16px; }
+      main #immanquables .entertain_carousel::-webkit-scrollbar-track {
+        background: transparent; }
+      main #immanquables .entertain_carousel::-webkit-scrollbar-thumb {
+        background-color: #6b6b6b;
+        border-radius: 10px;
+        border: 4px solid #ffffff; }
+      main #immanquables .entertain_carousel_link {
+        flex-shrink: 0;
+        margin-right: 16px;
+        min-height: 300px;
+        max-width: 270px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none; }
+        main #immanquables .entertain_carousel_link:hover .entertain_carousel_link_bottom h5 {
+          text-decoration: underline; }
+        main #immanquables .entertain_carousel_link:last-child {
+          margin-right: 0; }
+        main #immanquables .entertain_carousel_link_top {
+          position: relative;
+          min-height: 205px; }
+          main #immanquables .entertain_carousel_link_top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+            main #immanquables .entertain_carousel_link_top img {
+              transition: opacity 0.3s linear; }
+              main #immanquables .entertain_carousel_link_top img:hover {
+                opacity: 0.7; }
+          main #immanquables .entertain_carousel_link_top__icon {
+            position: absolute;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 5px;
+            right: 5px;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 6px;
+            transition: background-color 0.1s linear, border-color 0.1s linear; }
+            main #immanquables .entertain_carousel_link_top__icon:hover {
+              background-color: var(--light-grey); }
+            main #immanquables .entertain_carousel_link_top__icon svg {
+              font-size: larger; }
+          main #immanquables .entertain_carousel_link_top .badge {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-image: url("../img/tripadvisor_logo_icon.svg");
+            background-repeat: no-repeat;
+            background-size: cover; }
+        main #immanquables .entertain_carousel_link_bottom {
+          text-align: left; }
+          main #immanquables .entertain_carousel_link_bottom .star {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: var(--bg-michelin);
+            color: var(--color-michelin);
+            font-weight: 800;
+            font-size: 12px;
+            margin-top: 8px;
+            text-transform: uppercase; }
+            main #immanquables .entertain_carousel_link_bottom .star img {
+              height: 14px;
+              width: 14px;
+              vertical-align: middle;
+              margin-right: 4px; }
+          main #immanquables .entertain_carousel_link_bottom .note {
+            margin-top: 4px;
+            margin-bottom: 8px; }
+            main #immanquables .entertain_carousel_link_bottom .note span {
+              font-size: 12px;
+              line-height: 14px;
+              min-height: 14px;
+              font-weight: 400;
+              color: var(--black-hover); }
+          main #immanquables .entertain_carousel_link_bottom .tags {
+            margin-bottom: 4px; }
+            main #immanquables .entertain_carousel_link_bottom .tags span {
+              font-size: 14px;
+              line-height: 18px;
+              min-height: 18px;
+              color: var(--black-hover); }
+
+main #travel-guide {
+  margin-top: 24px;
+  position: relative;
+  margin-bottom: 60px; }
+  main #travel-guide .travel_gallery {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between; }
+    main #travel-guide .travel_gallery_img {
+      flex-basis: 33%;
+      /*max-height: 275px;*/
+      margin-right: 16px;
+      display: flex;
+      flex-direction: column; }
+      main #travel-guide .travel_gallery_img:last-child {
+        margin-right: 0; }
+      main #travel-guide .travel_gallery_img__top {
+        max-height: 250px; }
+        main #travel-guide .travel_gallery_img__top img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+          main #travel-guide .travel_gallery_img__top img {
+            transition: opacity 0.3s linear; }
+            main #travel-guide .travel_gallery_img__top img:hover {
+              opacity: 0.7; }
+      main #travel-guide .travel_gallery_img__bottom .nb-articles {
+        margin-bottom: 4px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--black-hover);
+        font-weight: 400; }
+      main #travel-guide .travel_gallery_img__bottom .publishby {
+        display: flex;
+        align-items: center;
+        margin-top: 5px; }
+        main #travel-guide .travel_gallery_img__bottom .publishby .bg_author {
+          width: 24px;
+          height: 24px;
+          background-position: no-repeat;
+          background-size: cover;
+          border-radius: 50%; }
+          main #travel-guide .travel_gallery_img__bottom .publishby .bg_author.eatwith {
+            background-image: url("../img/guide-voyageurs/eatwith.jpg"); }
+          main #travel-guide .travel_gallery_img__bottom .publishby .bg_author.topito {
+            background-image: url("../img/guide-voyageurs/topito-com.jpg"); }
+        main #travel-guide .travel_gallery_img__bottom .publishby span {
+          font-size: 14px;
+          line-height: 18px;
+          color: var(--black-hover);
+          margin-left: 8px;
+          font-weight: 400;
+          vertical-align: middle; }
+
+footer {
+  background-color: var(--bg-michelin);
+  padding: 32px 0;
+  margin-top: 80px;
+  margin-bottom: 0; }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    footer .container img {
+      width: 290px; }

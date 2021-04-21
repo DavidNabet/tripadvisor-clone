@@ -1,0 +1,41 @@
+/* Titles */
+h1 {
+  font-family: "Trip Sans Medium";
+  font-size: 54px;
+  line-height: 65px;
+  color: $red;
+  font-weight: bolder;
+  span {
+    color: $black;
+  }
+}
+
+h2 {
+  font-family: "Trip Sans Medium";
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #545454;
+  margin-top: 10px;
+}
