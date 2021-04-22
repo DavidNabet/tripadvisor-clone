@@ -1,9 +1,7 @@
-//media query
-$mobile: "480px";
-$tablet: "768px";
-$laptop: "960px";
-$desktop: "1220px";
-$widescreen: "1440px";
+//Media queries
+$tablet: 768px;
+$laptop: 1024px;
+$widescreen: 1328px;
 
 :root {
   --black: #000;
@@ -62,32 +60,35 @@ strong {
   color: #545454;
   font-weight: 700;
 }
+
+.hidden {
+  display: none !important;
+}
 // Container
 .container {
-  width: calc(var(--w-container) + 2 * var(--px-container));
-  min-width: calc(var(--w-container) + 2 * var(--px-container));
-  margin: 0 auto;
-  padding-right: var(--px-container);
-  padding-left: var(--px-container);
-  /*@media (max-width: $widescreen) {
-    width: 1153px;
-    min-width: 1153px;
+  /*   width: calc(var(--w-container) + 2 * var(--px-container));
+  min-width: calc(var(--w-container) + 2 * var(--px-container)); */
+  width: 100%;
+  @media (min-width: $widescreen) {
+    max-width: calc(var(--w-container) + 2 * var(--px-container));
+    margin: 0 auto;
+    padding-left: auto;
+    padding-right: auto;
   }
-  @media (max-width: $desktop) {
-    width: 961px;
-    min-width: 961px;
+
+  @media (min-width: $tablet) and (max-width: $widescreen) {
+    padding-left: var(--px-container);
+    padding-right: var(--px-container);
   }
-  @media (max-width: $laptop) {
-    width: 767px;
-    min-width: 767px;
+
+  @media (max-width: ($tablet - 1)) {
+    padding-left: var(--px-container);
+    padding-right: var(--px-container);
   }
-  @media (max-width: $tablet) {
-    width: 481px;
-    min-width: 481px;
+
+  /*   @media (min-width: $tablet) and (max-width: $laptop) {
   }
-  @media (max-width: $mobile) {
-    width: 320px;
-    min-width: 320px;
+  @media (max-width: 767px) {
   } */
 }
 
@@ -95,10 +96,9 @@ strong {
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
   & {
-    scrollbar-width: auto;
-    -moz-scrollbar-width: auto;
-    scrollbar-color: #6b6b6b #f5f5f5;
-    -moz-scrollbar-color: #6b6b6b #f5f5f5;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /*scrollbar-color: #6b6b6b #fff; */
   }
 
   /* Chrome, Edge, and Safari */

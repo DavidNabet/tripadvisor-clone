@@ -11,14 +11,24 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
+    .header_menu {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+      }
+    }
     .left_menu {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
       &_logo {
         img {
           width: 180px;
           margin-right: 28px;
           outline: none;
+          @media (max-width: 767px) {
+            width: 150px;
+            margin-right: auto;
+          }
         }
       }
     }
@@ -39,6 +49,10 @@ header {
           font-size: 16px;
           font-weight: 700;
           line-height: 20px;
+          display: inline;
+          @media (max-width: $laptop) {
+            display: none;
+          }
         }
         svg {
           font-size: large;
@@ -56,6 +70,9 @@ header {
         padding: 10px 16px;
         transition: color 0.1s linear, background-color 0.1s linear,
           border-color 0.1s linear;
+      }
+      @media (max-width: $tablet) {
+        display: none;
       }
     }
   }

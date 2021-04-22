@@ -34,6 +34,28 @@ main {
             overflow: hidden;
             text-overflow: ellipsis;
           }
+          @media (min-width: $tablet) and (max-width: $laptop) {
+            width: calc(25% - 16px);
+            flex: 0 0 auto;
+            min-width: 0;
+            margin-bottom: 16px;
+            &.hidden {
+              display: flex !important;
+            }
+          }
+          @media (max-width: ($tablet - 1)) {
+            width: calc(50% - 16px);
+            flex: 0 0 auto;
+            min-width: 0;
+            margin-bottom: 16px;
+            &.hidden {
+              display: flex !important;
+            }
+          }
+        }
+        @media (max-width: ($tablet - 1)),
+          (min-width: $tablet) and (max-width: $laptop) {
+          flex-flow: wrap;
         }
       }
     }

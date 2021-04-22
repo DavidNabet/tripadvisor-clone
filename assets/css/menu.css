@@ -1,0 +1,114 @@
+/*Notre but est donc de transformer cette <span> en 3 petit traits.
+ On va commencer par transformer notre span en un trait vertical centré.*/
+
+.menu-icon {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #000;
+    transition: background 0.5s;
+}
+
+
+/*Ensuite on va utiliser les pseudos éléments ::before et ::after 
+afin de créer la barre au dessus et en dessous.*/
+
+.menu-icon span::before,
+.menu-icon span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-6px);
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #000;
+    transition: transform 0.5s;
+}
+
+.menu-icon span::after {
+    transform: translateY(6px);
+}
+
+
+/* On veut maintenant transformer notre icône en croix 
+lorsque la classe de notre élément devient .is-opened. 
+Pour cela, on va faire tourner nos 2 traits horizontaux de 45 degrés 
+tout en faisant disparaitre le trait central en changeant son background-color. 
+On ne peut pas jouer ici sur l'opacité car cela affecterait aussi les pseudo éléments*/
+
+.menu-icon.is-opened span {
+    background: transparent;
+}
+
+.menu-icon.is-opened span::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.menu-icon.is-opened span::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+/* Pour rendre l'effet encore plus sympa 
+nous allons effectuer une rotation sur le parent de 180 degrés pour accentuer la transition.*/
+
+.menu-icon.is-opened {
+    transform: rotate(180deg)
+}
+
+
+/*Nous avons le squelette de notre animation,
+mais on souhaite ajouter autour de notre élément une bordure qui évolue en cercle.
+ Malheureusement, on ne peut pas faire ça simplement et on va devoir faire appel à nos amis les SVG.
+
+On va commencer par créer un cercle que l'on place dans notre élément .menu-icon
+
+
+On stylise ensuite le SVG en CSS pour faire apparaitre la bordure.*/
+
+
+/*
+On a maintenant notre bordure blanche mais comment l'animer ? 
+On peut jouer sur 2 propriétés intéréssantes des SVG
+
+stroke-dasharray, permet de transformer notre bordure en pointillés. 
+On pourra alors indiquer la taille des pointillés et des espaces blancs.
+stroke-dashoffset, permet de décaler le démarrage des tirets
+Gràce au pouvoir des mathématiques, on va pouvoir utiliser ces 2 propriétés à notre avantage. 
+Notre cercle a un diamètre de 54px donc la circonférence du cercle fait 169.56px. 
+On va utiliser cette valeur pour le stroke-dasharray pour avoir un tiret qui fait la taille du cercle 
+(on arrondira à 170px) puis il nous suffira d'animer le stroke-dashoffset 
+pour obtenir une animation de "remplissage" de la bordure.*/
+
+.menu-icon svg {
+    position: static;
+    z-index: 1;
+    /* fill: slateblue; */
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: #000000;
+}
+
+.menu-icon svg {
+    stroke-dashoffset: 170;
+    stroke-dasharray: 170;
+    transition: stroke-dashoffset 0.5s;
+}
+
+.menu-icon.is-opened {
+    stroke-dashoffset: 0;
+}

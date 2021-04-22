@@ -7,24 +7,33 @@
     <title>Tripadvisor - Clone</title>
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/menu.css" type="text/css" />
     <!-- Fontawesome --> 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
     data-auto-ally="true"></script>
 </head>
-<body>
+<body> 
     <header>
         <nav id="header" class="container">
+            <div class="header_menu">
+                <div class="menu-icon">
+                    <span></span>
+                    <svg x="0" y="0" width="54px" height="54px" viewBox="0 0 54 54">
+                        <circle cx="27" cy="27" r="26"></circle>
+                    </svg>	
+                </div>
+            </div>
             <div class="left_menu">
                 <a href="#" class="left_menu_logo">
                     <img src="./assets/img/tripadvisor_logo.svg" alt="logo">
                 </a>
             </div>
-            <div class="mid_menu">
-                <!-- <form class="left_menu_search">
+            <!-- <div class="mid_menu">
+                <form class="left_menu_search">
                     <input type="search" />
                     <button class="search_btn" type="submit" tabindex="-1"></button>
-                </form> -->
-            </div>
+                </form>
+            </div> -->
             <nav class="right_menu">
                 <a href="#" class="right_menu_icons">
                     <i class="fas fa-pen"></i>
@@ -73,6 +82,10 @@
                     <li>
                         <span>Vols</span>
                         <i class="fas fa-plane"></i>
+                    </li>
+                    <li class="hidden">
+                        <span>Croisières</span>
+                        <i class="fas fa-ship"></i>
                     </li>
                     <li>
                         <span>Plus</span>
