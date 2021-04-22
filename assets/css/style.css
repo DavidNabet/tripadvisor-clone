@@ -47,11 +47,7 @@ strong {
 .container {
   /*   width: calc(var(--w-container) + 2 * var(--px-container));
   min-width: calc(var(--w-container) + 2 * var(--px-container)); */
-  width: 100%;
-  /*   @media (min-width: $tablet) and (max-width: $laptop) {
-  }
-  @media (max-width: 767px) {
-  } */ }
+  width: 100%; }
   @media (min-width: 1328px) {
     .container {
       max-width: calc(var(--w-container) + 2 * var(--px-container));
@@ -116,11 +112,7 @@ strong {
 .container {
   /*   width: calc(var(--w-container) + 2 * var(--px-container));
   min-width: calc(var(--w-container) + 2 * var(--px-container)); */
-  width: 100%;
-  /*   @media (min-width: $tablet) and (max-width: $laptop) {
-  }
-  @media (max-width: 767px) {
-  } */ }
+  width: 100%; }
   @media (min-width: 1328px) {
     .container {
       max-width: calc(var(--w-container) + 2 * var(--px-container));
@@ -244,11 +236,7 @@ strong {
 .container {
   /*   width: calc(var(--w-container) + 2 * var(--px-container));
   min-width: calc(var(--w-container) + 2 * var(--px-container)); */
-  width: 100%;
-  /*   @media (min-width: $tablet) and (max-width: $laptop) {
-  }
-  @media (max-width: 767px) {
-  } */ }
+  width: 100%; }
   @media (min-width: 1328px) {
     .container {
       max-width: calc(var(--w-container) + 2 * var(--px-container));
@@ -315,29 +303,58 @@ main #banner .menu ul {
 main #banner .gallery {
   position: relative;
   height: 430px;
-  width: 100%;
-  display: flex;
-  overflow: hidden; }
-  main #banner .gallery img {
-    object-fit: cover;
-    cursor: pointer; }
-    main #banner .gallery img {
-      transition: opacity 0.3s linear; }
-      main #banner .gallery img:hover {
-        opacity: 0.7; }
+  display: flex; }
+  @media (max-width: 1328px) {
+    main #banner .gallery {
+      height: 372px;
+      min-height: 372px; } }
+  @media (max-width: 1024px) {
+    main #banner .gallery {
+      height: 276px;
+      min-height: 372px; } }
+  @media (max-width: 767px) {
+    main #banner .gallery {
+      margin-left: -24px;
+      margin-right: -24px; } }
   main #banner .gallery .first {
+    height: 100%;
     flex: 1;
-    margin-right: 5px; }
-  main #banner .gallery .photos {
-    flex: 1;
-    width: 480px;
-    display: flex;
-    flex-direction: column; }
-    main #banner .gallery .photos img {
+    margin-right: 2px; }
+    main #banner .gallery .first img {
       width: 100%;
-      height: 50%; }
-      main #banner .gallery .photos img:last-child {
-        margin-top: 5px; }
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer; }
+      main #banner .gallery .first img {
+        transition: opacity 0.3s linear; }
+        main #banner .gallery .first img:hover {
+          opacity: 0.7; }
+    @media (max-width: 1024px) {
+      main #banner .gallery .first {
+        flex: auto;
+        margin-right: 0; } }
+  main #banner .gallery .photos {
+    height: 100%; }
+    @media (min-width: 1024px) and (max-width: 1328px) {
+      main #banner .gallery .photos {
+        width: 402px;
+        display: flex;
+        flex-direction: column; } }
+    @media (max-width: 767px) {
+      main #banner .gallery .photos {
+        display: none; } }
+    main #banner .gallery .photos img {
+      height: calc(50% - 1px);
+      width: 100%;
+      object-fit: cover;
+      display: block; }
+      @media (max-width: 768px) {
+        main #banner .gallery .photos img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover; } }
+      main #banner .gallery .photos img:first-child {
+        margin-bottom: 2px; }
   main #banner .gallery .allpictures {
     position: absolute;
     bottom: 20px;
@@ -372,8 +389,14 @@ main #second {
   margin-top: 16px;
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 1024px) {
+    main #second {
+      flex-direction: column; } }
   main #second .first_column {
     width: 50%; }
+    @media (max-width: 1024px) {
+      main #second .first_column {
+        width: 100%; } }
     main #second .first_column p {
       font-family: var(--font-p);
       font-size: 20px;
@@ -381,8 +404,12 @@ main #second {
       font-weight: 400;
       color: var(--black-hover);
       margin-bottom: 24px; }
+      @media (max-width: 768px) {
+        main #second .first_column p {
+          font-size: 16px;
+          line-height: 20px; } }
   main #second .second_column {
-    width: 42%;
+    width: 45%;
     display: flex;
     flex-direction: column; }
     main #second .second_column_top {
@@ -394,6 +421,10 @@ main #second {
         font-size: 16px;
         line-height: 20px;
         margin-bottom: 24px; }
+        @media (max-width: 768px) {
+          main #second .second_column_top p {
+            font-size: 16px;
+            line-height: 20px; } }
       main #second .second_column_top button {
         padding: 16px;
         font-weight: 700;
@@ -408,8 +439,27 @@ main #second {
         transition: color 0.1s linear, background-color 0.1s linear, border-color 0.1s linear; }
         main #second .second_column_top button:hover {
           background-color: var(--black-hover); }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        main #second .second_column_top {
+          flex: auto;
+          border-radius: 12px 0 0 12px; } }
     main #second .second_column img {
       border-radius: 0 0 12px 12px; }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        main #second .second_column img {
+          border-radius: 0 12px 12px 0;
+          width: 50%;
+          object-fit: cover; } }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      main #second .second_column {
+        margin-top: 5%;
+        flex-direction: row;
+        max-width: 100%;
+        width: 100%; } }
+    @media (max-width: 767px) {
+      main #second .second_column {
+        width: 100%;
+        margin-top: 5%; } }
 
 main #immanquables {
   margin-top: 84px; }
@@ -418,8 +468,18 @@ main #immanquables {
     flex-direction: row;
     margin-bottom: 80px;
     margin-top: 24px; }
+    @media (max-width: 768px) {
+      main #immanquables .entertain {
+        flex-direction: column; } }
     main #immanquables .entertain_text {
       width: calc(25% + 40px); }
+      @media (max-width: 1024px) {
+        main #immanquables .entertain_text {
+          width: calc(50% + 20px); } }
+      @media (max-width: 768px) {
+        main #immanquables .entertain_text {
+          width: 100%;
+          margin-bottom: 40px; } }
       main #immanquables .entertain_text p {
         font-family: var(--font-p);
         font-size: 18px;
@@ -452,6 +512,9 @@ main #immanquables {
         background-color: #6b6b6b;
         border-radius: 10px;
         border: 4px solid #ffffff; }
+      @media (max-width: 768px) {
+        main #immanquables .entertain_carousel {
+          width: 100%; } }
       main #immanquables .entertain_carousel_link {
         flex-shrink: 0;
         margin-right: 16px;
@@ -639,11 +702,7 @@ strong {
 .container {
   /*   width: calc(var(--w-container) + 2 * var(--px-container));
   min-width: calc(var(--w-container) + 2 * var(--px-container)); */
-  width: 100%;
-  /*   @media (min-width: $tablet) and (max-width: $laptop) {
-  }
-  @media (max-width: 767px) {
-  } */ }
+  width: 100%; }
   @media (min-width: 1328px) {
     .container {
       max-width: calc(var(--w-container) + 2 * var(--px-container));
