@@ -152,8 +152,6 @@ header {
           width: 150px;
           margin-right: auto; } }
     header #header .right_menu_icons {
-      height: 40px;
-      min-width: 40px;
       text-decoration: none;
       border-radius: 20px;
       padding: 12px;
@@ -162,6 +160,8 @@ header {
       transition: background-color 0.1s linear, border-color 0.1s linear; }
       header #header .right_menu_icons:hover {
         background-color: var(--light-grey); }
+      header #header .right_menu_icons i {
+        vertical-align: middle; }
       header #header .right_menu_icons span {
         font-size: 16px;
         font-weight: 700;
@@ -170,8 +170,6 @@ header {
         @media (max-width: 1024px) {
           header #header .right_menu_icons span {
             display: none; } }
-      header #header .right_menu_icons svg {
-        font-size: large; }
     header #header .right_menu button {
       font-size: 16px;
       line-height: 20px;
@@ -553,8 +551,6 @@ main #immanquables {
             transition: background-color 0.1s linear, border-color 0.1s linear; }
             main #immanquables .entertain_carousel_link_top__icon:hover {
               background-color: var(--light-grey); }
-            main #immanquables .entertain_carousel_link_top__icon svg {
-              font-size: larger; }
           main #immanquables .entertain_carousel_link_top .badge {
             width: 30px;
             height: 30px;

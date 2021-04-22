@@ -34,8 +34,6 @@ header {
     }
     .right_menu {
       &_icons {
-        height: 40px;
-        min-width: 40px;
         text-decoration: none;
         border-radius: 20px;
         padding: 12px;
@@ -45,6 +43,9 @@ header {
         &:hover {
           background-color: $gray;
         }
+        i {
+          vertical-align: middle;
+        }
         span {
           font-size: 16px;
           font-weight: 700;
@@ -53,9 +54,6 @@ header {
           @media (max-width: $laptop) {
             display: none;
           }
-        }
-        svg {
-          font-size: large;
         }
       }
       button {
