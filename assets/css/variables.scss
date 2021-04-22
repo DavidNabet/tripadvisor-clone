@@ -52,6 +52,7 @@ button {
 
 a {
   color: $black-hover;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
@@ -95,7 +96,9 @@ strong {
   /* Firefox */
   & {
     scrollbar-width: auto;
+    -moz-scrollbar-width: auto;
     scrollbar-color: #6b6b6b #f5f5f5;
+    -moz-scrollbar-color: #6b6b6b #f5f5f5;
   }
 
   /* Chrome, Edge, and Safari */
