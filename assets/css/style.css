@@ -727,8 +727,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    @media (max-width: 768px) {
+      footer .container {
+        flex-direction: column; } }
     footer .container img {
       width: 290px; }
+      @media (max-width: 768px) {
+        footer .container img {
+          width: 250px;
+          margin-bottom: 20px; } }
 
 /* Titles */
 h1 {

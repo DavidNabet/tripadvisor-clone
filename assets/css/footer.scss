@@ -9,8 +9,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
     img {
       width: 290px;
+      @media (max-width: $tablet) {
+        width: 250px;
+        margin-bottom: 20px;
+      }
     }
   }
 }
