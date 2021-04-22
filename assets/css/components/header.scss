@@ -1,0 +1,62 @@
+@import "./variables.scss";
+
+header {
+  background-color: white;
+  //   border-bottom: 1px solid #f3735f;
+  height: 60px;
+  margin-bottom: 35px;
+  #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    .left_menu {
+      display: flex;
+      align-items: center;
+      &_logo {
+        img {
+          width: 180px;
+          margin-right: 28px;
+          outline: none;
+        }
+      }
+    }
+    .right_menu {
+      &_icons {
+        height: 40px;
+        min-width: 40px;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 12px;
+        margin-right: 8px;
+        color: $black;
+        transition: background-color 0.1s linear, border-color 0.1s linear;
+        &:hover {
+          background-color: $gray;
+        }
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+        }
+        svg {
+          font-size: large;
+        }
+      }
+      button {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        border: none;
+        appearance: none;
+        color: white;
+        background-color: $black;
+        border-radius: 20px;
+        padding: 10px 16px;
+        transition: color 0.1s linear, background-color 0.1s linear,
+          border-color 0.1s linear;
+      }
+    }
+  }
+}
